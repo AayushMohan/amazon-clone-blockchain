@@ -6,6 +6,7 @@ import logoFull from "../assets/amazon_logo_full.png";
 import logo from "../assets/amazon_logo.png";
 import { FaBox } from "react-icons/fa";
 import { BsFillBookmarkFill, BsFillPersonFill } from "react-icons/bs";
+import { AiOutlineHistory } from "react-icons/ai";
 
 const isAuthenticated = true;
 const username = "Aayush";
@@ -91,6 +92,15 @@ const Sidebar = () => {
           <BsFillPersonFill />
           Profile
         </div>
+        <Link href="/history">
+          <div className={styles.menuItem}>
+            <AiOutlineHistory />
+            Transaction History
+          </div>
+        </Link>
+      </div>
+      <div className={styles.companyName}>
+        <Image src={logoFull} alt="amazon" height={100} width={100} />
       </div>
     </div>
   );
