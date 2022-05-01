@@ -3,9 +3,6 @@ import { useMoralis } from "react-moralis";
 
 export const AmazonContext = createContext();
 
-export const Amazon Provider = ({children}) => {
-  return(
-   <AmazonContext.Provider value={}>{children}</AmazonContext.Provider>
-  )
-
-}
+export const AmazonProvider = ({ children }) => {
+  return <AmazonContext.Provider value={{}}>{children}</AmazonContext.Provider>;
+};
