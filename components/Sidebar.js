@@ -2,8 +2,8 @@ import Image from "next/image";
 import React from "react";
 import { ConnectButton } from "web3uikit";
 
-const isAuthenticated = false;
-
+const isAuthenticated = true;
+const username = "Aayush";
 const Sidebar = () => {
   const styles = {
     container: `h-full w-[300px] flex flex-col bg-[#fff] static`,
@@ -28,6 +28,7 @@ const Sidebar = () => {
           <>
             <div className={styles.profilePicContainer}>
               <Image
+                src={`https://avatars.dicebear.com/api/pixel-art/${username}.svg`}
                 alt="profile"
                 className={styles.profilePic}
                 height={100}
@@ -40,7 +41,7 @@ const Sidebar = () => {
                   <input
                     type="text"
                     placeholder="Username..."
-                    className={usernameInput}
+                    className={styles.usernameInput}
                     // value={nickname}
                     // onChange={(e) => setNickname(e.target.value)}
                   />
@@ -49,7 +50,7 @@ const Sidebar = () => {
               </>
             ) : (
               <div>
-                <div className={styles.welcome}>Welcome</div>
+                <div className={styles.welcome}>Welcome {username}</div>
               </div>
             )}
           </>
