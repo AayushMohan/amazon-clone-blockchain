@@ -1,6 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { ConnectButton } from "web3uikit";
+import logoFull from "../assets/amazon_logo_full.png";
+import logo from "../assets/amazon_logo.png";
 
 const isAuthenticated = true;
 const username = "Aayush";
@@ -59,6 +62,19 @@ const Sidebar = () => {
         <div className={styles.connectButton}>
           <ConnectButton />
         </div>
+      </div>
+      <div className={styles.menu}>
+        <Link href="/">
+          <div className={styles.menuItem}>
+            <Image
+              alt=""
+              src={logo}
+              height={30}
+              width={30}
+              className={styles.amazonLogo}
+            />
+          </div>
+        </Link>
       </div>
     </div>
   );
