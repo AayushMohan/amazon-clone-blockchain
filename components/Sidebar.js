@@ -55,6 +55,10 @@ const Sidebar = () => {
             )}
           </>
         )}
+
+        <div className={styles.connectButton}>
+          <ConnectButton />
+        </div>
       </div>
     </div>
   );
