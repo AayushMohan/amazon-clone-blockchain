@@ -4,6 +4,8 @@ import React from "react";
 import { ConnectButton } from "web3uikit";
 import logoFull from "../assets/amazon_logo_full.png";
 import logo from "../assets/amazon_logo.png";
+import { FaBox } from "react-icons/fa";
+import { BsFillBookmarkFill, BsFillPersonFill } from "react-icons/bs";
 
 const isAuthenticated = true;
 const username = "Aayush";
@@ -73,8 +75,22 @@ const Sidebar = () => {
               width={30}
               className={styles.amazonLogo}
             />
+            My Amazon
+            <br /> board
           </div>
         </Link>
+        <div className={styles.menuItem}>
+          <FaBox />
+          Collections
+        </div>
+        <div className={styles.menuItem}>
+          <BsFillBookmarkFill />
+          Saved
+        </div>
+        <div className={styles.menuItem}>
+          <BsFillPersonFill />
+          Profile
+        </div>
       </div>
     </div>
   );
