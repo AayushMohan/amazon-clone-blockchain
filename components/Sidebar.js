@@ -10,6 +10,8 @@ import { AiOutlineHistory } from "react-icons/ai";
 
 const isAuthenticated = true;
 const username = "Aayush";
+const nickname = "";
+
 const Sidebar = () => {
   const styles = {
     container: `h-full w-[300px] flex flex-col bg-[#fff] static`,
