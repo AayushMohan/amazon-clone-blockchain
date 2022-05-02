@@ -1,4 +1,5 @@
 import React from "react";
+import { AmazonContext } from "../context/AmazonContext";
 
 const Card = (item) => {
   const styles = {
@@ -8,6 +9,8 @@ const Card = (item) => {
     price: `text-md font-bold flex justify-center`,
     coins: `ml-[10px]`,
   };
+
+  const { buyAsset } = useContext(AmazonContext);
 
   return (
     <div className={styles.cardContainer}>
