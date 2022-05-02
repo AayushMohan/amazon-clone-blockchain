@@ -8,8 +8,8 @@ import { FaBox } from "react-icons/fa";
 import { BsFillBookmarkFill, BsFillPersonFill } from "react-icons/bs";
 import { AiOutlineHistory } from "react-icons/ai";
 
-const isAuthenticated = true;
-const username = "Aayush";
+const isAuthenticated = false;
+const username = "";
 const nickname = "";
 
 const Sidebar = () => {
