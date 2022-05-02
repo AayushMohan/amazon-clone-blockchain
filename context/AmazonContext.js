@@ -14,15 +14,42 @@ export const AmazonProvider = ({ children }) => {
     Moralis,
     user,
     isWeb3Enabled,
-  } = useMoralis;
+  } = useMoralis();
 
   useEffect(() => {
     (async () => {
       if (isAuthenticated) {
         const currentUsername = await user?.get("nickname");
+        setUsername(currentUsername);
       }
     })();
   }, [isAuthenticated, user, username]);
 
-  return <AmazonContext.Provider value={{}}>{children}</AmazonContext.Provider>;
+  const handleSetUsername = () => {
+    if (user) {
+      if (nickname) {
+        user.set("nickname", nickname);
+        user.save();
+        setNickname("");
+      } else {
+        console.log("Can't set empty nickname");
+      }
+    } else {
+      console.log("No user ");
+    }
+  };
+
+  return (
+    <AmazonContext.Provider
+      value={{
+        isAuthenticated,
+        nickname,
+        setNickname,
+        username,
+        handleSetUsername,
+      }}
+    >
+      {children}
+    </AmazonContext.Provider>
+  );
 };

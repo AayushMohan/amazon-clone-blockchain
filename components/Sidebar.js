@@ -1,16 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
 import { ConnectButton } from "web3uikit";
 import logoFull from "../assets/amazon_logo_full.png";
 import logo from "../assets/amazon_logo.png";
 import { FaBox } from "react-icons/fa";
 import { BsFillBookmarkFill, BsFillPersonFill } from "react-icons/bs";
 import { AiOutlineHistory } from "react-icons/ai";
-
-const isAuthenticated = false;
-const username = "";
-const nickname = "";
+import { AmazonContext } from "../context/AmazonContext";
 
 const Sidebar = () => {
   const styles = {
@@ -28,6 +25,14 @@ const Sidebar = () => {
     username: `flex items-center w-full justify-center`,
     setNickname: `text-lg font-bold flex flex-1 items-center mt-[20px] mb-[20px] text-white`,
   };
+
+  const {
+    isAuthenticated,
+    nickname,
+    setNickname,
+    username,
+    handleSetUsername,
+  } = useContext(AmazonContext);
 
   return (
     <div className={styles.container}>
@@ -50,11 +55,16 @@ const Sidebar = () => {
                     type="text"
                     placeholder="Username..."
                     className={styles.usernameInput}
-                    // value={nickname}
-                    // onChange={(e) => setNickname(e.target.value)}
+                    value={nickname}
+                    onChange={(e) => setNickname(e.target.value)}
                   />
                 </div>
-                <button className={styles.setNickname}>Set Nickname</button>
+                <button
+                  className={styles.setNickname}
+                  onClick={handleSetUsername}
+                >
+                  Set Nickname
+                </button>
               </>
             ) : (
               <div>
