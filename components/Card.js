@@ -10,7 +10,7 @@ const Card = (item) => {
     coins: `ml-[10px]`,
   };
 
-  const { buyAsset } = useContext(AmazonContext);
+  // const { buyAsset } = useContext(AmazonContext);
 
   return (
     <div className={styles.cardContainer}>
