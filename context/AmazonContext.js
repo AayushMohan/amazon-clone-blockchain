@@ -38,7 +38,7 @@ export const AmazonProvider = ({ children }) => {
         await getAssets();
       }
     })();
-  }, [getAssets, isWeb3Enabled]);
+  }, [isWeb3Enabled]);
 
   const handleSetUsername = () => {
     if (user) {
@@ -71,6 +71,7 @@ export const AmazonProvider = ({ children }) => {
         setNickname,
         username,
         handleSetUsername,
+        assets,
       }}
     >
       {children}
