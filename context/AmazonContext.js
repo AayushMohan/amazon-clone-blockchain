@@ -32,6 +32,14 @@ export const AmazonProvider = ({ children }) => {
     })();
   }, [isAuthenticated, user, username]);
 
+  useEffect(() => {
+    (async () => {
+      if (isWeb3Enabled) {
+        await getAssets();
+      }
+    })();
+  }, [getAssets, isWeb3Enabled]);
+
   const handleSetUsername = () => {
     if (user) {
       if (nickname) {
