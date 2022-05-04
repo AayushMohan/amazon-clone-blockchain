@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
+import Image from "next/image";
 import { AmazonContext } from "../context/AmazonContext";
+import { FaCoins } from "react-icons/fa";
 
 const Card = (item) => {
   const styles = {
@@ -10,11 +12,19 @@ const Card = (item) => {
     coins: `ml-[10px]`,
   };
 
-  // const { buyAsset } = useContext(AmazonContext);
+  const { buyAsset } = useContext(AmazonContext);
 
   return (
     <div className={styles.cardContainer}>
-      <div className={styles.card}></div>
+      <div className={styles.card}>
+        <Image
+          alt="product"
+          src={item.src}
+          className="object-cover object-center"
+          width={190}
+          height={250}
+        />
+      </div>
     </div>
   );
 };
