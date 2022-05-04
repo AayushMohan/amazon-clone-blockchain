@@ -25,6 +25,10 @@ const Card = (item) => {
           height={250}
         />
       </div>
+      <div className={styles.cardTitle}>{item.name}</div>
+      <div className={styles.price}>
+        {item.price} AC <FaCoins className={styles.coins} />
+      </div>
     </div>
   );
 };
