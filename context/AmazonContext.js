@@ -38,7 +38,7 @@ export const AmazonProvider = ({ children }) => {
         await getAssets();
       }
     })();
-  }, [isWeb3Enabled]);
+  }, [isWeb3Enabled, assetsData, assetsDataisLoading]);
 
   const handleSetUsername = () => {
     if (user) {

@@ -11,14 +11,12 @@ const Cards = () => {
     cards: `flex items-center flex-wrap gap-[80px]`,
   };
 
-  console.log(assets);
-
   return (
     <div className={styles.container}>
       <div className={styles.title}>New Release</div>
       <div className={styles.cards}>
         {assets.map((item) => {
-          <Card key={item.id} item={item.attributes} />;
+          return <Card key={item.id} item={item.attributes} />;
         })}
       </div>
     </div>
